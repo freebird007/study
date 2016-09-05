@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS cookie</title>
+	<meta name="author" content="Mr.大洋芋">
+	<meta charset="UTF-8">
+</head>
+<body>
+<input type="button" value='点击输入名字\查看名字' onclick="set()"/>
+<br>
+<input type="button" value='清除名字的cookie' onclick="clean()"/>
+	<script>
+	function getCookie(cname){
+		var name=cname+ "=";//创建一个检索字段 cname=
+		var ca=document.cookie.split(";");//把所有cookie分割成字符串
+		for(var i=0;i<ca.length;i++){//循环数组
+			var c=ca[i].trim();//对数组的某个单元进行修剪
+			if(c.indexOf(name)==0){//返回cname=的首次找到的位置 'cname='应该在单元的第一个字符就找到了
+				return c.substring(name.length,c.length);//'cname='长度为6，cname=xie 从位置6到单元长度之间都是索要找的值
+			}
+		}
+		return "";
+	}
+	function setCookie(cname,cvalue,day){
+		var d = new Date();
+		d.setTime(d.getTime()+(day*24*60*60*1000));
+		var expires = "expires="+d.toGMTString();//过期时间
+		document.cookie=cname+ "=" + cvalue + "; "+expires;//设置有过期时间的cookies 
+		alert('OK');
+	}
+	function set(){
+		var user=getCookie("username");
+		if(user!=""){
+			alert("Welcome back "+user);
+		}else{
+			user=prompt("input your name:","");
+			if(user!=""&&user!=null){
+				setCookie("username",user,1);
+			}
+		}
+	}
+	function clean(){
+		document.cookie="username=";
+		alert('OK');
+	}
+	</script>
+</body>
+</html>
