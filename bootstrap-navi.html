@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bootstrap</title>
+	<meta name="author" content="Mr.大洋芋">
+	<meta charset="utf-8">
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--width=device-width确保网站可以正确呈现在不同的设备上 
+	initial-scale=1.0网页加载时1比1比例加载，不会缩放
+	maximum-scale=1.0 user-scalable=no禁用缩放。用户只能滚动屏幕
+-->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<style>
+	.btn{
+		display: inline-block;
+		background-color: gray;
+		color:white;
+		border:2px outset #222;
+		text-shadow:1px 1px 2px black;/* text-shadow 属性向文本设置阴影。 text-shadow: h-shadow v-shadow blur color;*/
+		box-shadow: 2px 2px 4px black;
+	}
+	.btn:hover{
+		background-color: #ddd;
+		color:black;
+		border:2px outset #222;/*border-style属性 outset设置3D边框效果*/
+		text-shadow:1px 1px 2px black;/* text-shadow 属性向文本设置阴影。 text-shadow: h-shadow v-shadow blur color;*/
+		box-shadow: 2px 2px 4px black;
+		transform:scale(1.1,1.1);
+	}
+	</style>
+</head>
+<body>
+
+	<ul class="list-inline "style="text-align: center; margin-top:30px;">
+		<li><a class='btn btn-default btn-lg  ' href="">coffee</a></li>
+		<li><a class='btn btn-default btn-lg  ' href="">tea</a></li>
+		<li><a class='btn btn-default btn-lg' href="">milk</a></li>
+		<li><a class='btn btn-default btn-lg ' href="">milk</a></li>
+	</ul>
+	
+</body>
+</html>
